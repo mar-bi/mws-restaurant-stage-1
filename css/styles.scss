@@ -1,5 +1,14 @@
-@charset "UTF-8";
+@charset "utf-8";
 /* CSS Document */
+
+// Variables
+$text-color: #333;
+$orange: orange;
+$blue: #3397db;
+$body-bcg: #fdfdfd;
+
+
+
 /* ====================== General ============================ */
 body,
 td,
@@ -7,12 +16,12 @@ th,
 p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  color: #333;
+  color: $text-color;
   line-height: 1.5;
 }
 
 body {
-  background-color: #fdfdfd;
+  background-color: $body-bcg;
   position: relative;
   max-width: 1024px;
   margin: 0 auto;
@@ -22,17 +31,17 @@ ul,
 li {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  color: #333;
+  color: $text-color;
 }
 
 a {
-  color: orange;
+  color: $orange;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #3397db;
+  color: $blue;
   text-decoration: none;
 }
 
@@ -91,9 +100,7 @@ section {
 .nav-title {
   margin: auto;
   padding: 0.25em 0.5em 0 0.5em;
-}
-@media screen and (min-width: 494px) {
-  .nav-title {
+  @media screen and (min-width: 494px) {
     padding: 1em 0.5em;
   }
 }
@@ -124,7 +131,7 @@ section {
 #breadcrumb li + li:before {
   padding: 8px;
   color: black;
-  content: "/ ";
+  content: "/\00a0";
 }
 
 /* Add a color to all links inside the list */
@@ -152,11 +159,9 @@ section {
   width: 100%;
   min-height: 50px;
   padding: 0.75em 0.5em;
-  background-color: #3397db;
+  background-color: $blue;
   align-items: center;
-}
-@media screen and (min-width: 440px) {
-  .filter-options {
+  @media screen and (min-width: 440px) {
     padding-bottom: 1em;
   }
 }
@@ -197,9 +202,8 @@ section {
   list-style: outside none none;
   margin: 0;
   padding: 30px 15px 50px;
-}
-@media screen and (min-width: 980px) {
-  .restaurants-list {
+  //text-align: center;
+  @media screen and (min-width: 980px) {
     justify-content: space-between;
   }
 }
@@ -217,9 +221,7 @@ section {
   padding: 1em 0.8em;
   text-align: left;
   width: 270px;
-}
-@media screen and (min-width: 450px) {
-  .restaurant-item {
+  @media screen and (min-width: 450px) {
     margin: 0.9em 0.5em;
   }
 }
@@ -249,14 +251,15 @@ section {
   margin: 0;
   font-size: 1em;
   text-align: center;
-}
-.restaurant-text:last-of-type {
-  height: 48px;
+  &:last-of-type {
+    height: 48px;
+  }
 }
 
 .restaurant-link {
   display: block;
-  background-color: orange;
+  background-color: $orange;
+  //border-bottom: 3px solid #eee;
   border-radius: 2px;
   color: #fff;
   font-size: 1em;
@@ -267,9 +270,9 @@ section {
   text-transform: uppercase;
   box-shadow: 3px 3px #aaa;
   transition: transform 0.2s ease;
-}
-.restaurant-link:active {
-  transform: translateY(3px);
+  &:active {
+    transform: translateY(3px);
+  }
 }
 
 /* ====================== Restaurant Details ====================== */
@@ -378,5 +381,3 @@ section {
 #restaurant-hours td {
   color: #666;
 }
-
-/*# sourceMappingURL=styles.css.map */
