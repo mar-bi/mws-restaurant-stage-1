@@ -253,6 +253,7 @@ section {
   margin: 20px 0 10px;
   text-transform: uppercase;
   text-align: center;
+  min-height: 52px;
 }
 
 .restaurant-text {
