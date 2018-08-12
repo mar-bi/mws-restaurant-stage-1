@@ -1,4 +1,5 @@
 .vscode
 .vscode/settings.json
-node_modules
+node_modules/
+build/
 project_plan.md
