@@ -146,6 +146,11 @@ section {
   text-decoration: none;
 }
 
+.breadcrumb-link-current {
+  @extend .breadcrumb-link;
+  font-weight: 600;
+}
+
 /* Add a color on mouse-over */
 .breadcrumb-link:hover {
   color: #01447e;
@@ -220,7 +225,7 @@ section {
   margin: 0;
   padding: 30px 15px 50px;
   @media screen and (min-width: 980px) {
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 

@@ -134,13 +134,17 @@ section {
 }
 
 /* Add a color to all links inside the list */
-.breadcrumb-link {
+.breadcrumb-link, .breadcrumb-link-current {
   color: #0275d8;
   text-decoration: none;
 }
 
+.breadcrumb-link-current {
+  font-weight: 600;
+}
+
 /* Add a color on mouse-over */
-.breadcrumb-link:hover {
+.breadcrumb-link:hover, .breadcrumb-link-current:hover {
   color: #01447e;
   text-decoration: underline;
 }
@@ -221,7 +225,7 @@ section {
 }
 @media screen and (min-width: 980px) {
   .restaurants-list {
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 
