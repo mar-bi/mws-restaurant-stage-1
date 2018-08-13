@@ -95,6 +95,8 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById("restaurant-img");
+  image.srcset = DBHelper.imageSrcsetWForRestaurant(restaurant);
+  image.sizes = "(max-width: 699px) 270px, 400px";
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById("restaurant-cuisine");
