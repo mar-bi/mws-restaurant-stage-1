@@ -212,9 +212,20 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
     marker.on("click", onClick);
+    marker.on("keypress", onKeyPress);
+
     function onClick() {
       window.location.href = marker.options.url;
     }
+
+    function onKeyPress(e){
+      const KEY_ENTER = 13;
+      const charCode = e.originalEvent.charCode;
+      if (charCode === KEY_ENTER) {
+        window.location.href = marker.options.url;
+      }
+    }
+
     self.markers.push(marker);
   });
 };

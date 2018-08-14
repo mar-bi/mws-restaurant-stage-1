@@ -206,8 +206,9 @@ class DBHelper {
       [restaurant.latlng.lat, restaurant.latlng.lng],
       {
         title: restaurant.name,
-        alt: restaurant.name,
-        url: DBHelper.urlForRestaurant(restaurant)
+        alt: `${restaurant.name} ${restaurant.neighborhood}`,
+        url: DBHelper.urlForRestaurant(restaurant),
+        keyboard: true
       }
     );
     marker.addTo(newMap);
