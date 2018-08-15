@@ -206,7 +206,7 @@ class DBHelper {
       [restaurant.latlng.lat, restaurant.latlng.lng],
       {
         title: restaurant.name,
-        alt: `${restaurant.name} ${restaurant.neighborhood}`,
+        alt: `${restaurant.name}, ${restaurant.neighborhood}`,
         url: DBHelper.urlForRestaurant(restaurant),
         keyboard: true
       }
