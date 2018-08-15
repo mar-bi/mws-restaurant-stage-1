@@ -6,6 +6,7 @@ var markers = [];
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', () => {
+	registerServiceWorker();
 	initMap(); // added
 	fetchNeighborhoods();
 	fetchCuisines();
@@ -219,3 +220,24 @@ const addMarkersToMap = (restaurants = self.restaurants) => {
 	});
 };
 
+/**
+ * Register Service Worker
+ */
+// TODO: change SW location to /mws-restaurant-stage-1/sw.js and
+// scope to /mws-restaurant-stage-1/ for github hosting
+const registerServiceWorker = () => {
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker
+			.register('/sw.js', {
+				scope: '/'
+			})
+			.then(registration => {
+				console.log(
+					`Registration is successful, the scope is ${registration.scope}`
+				);
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	}
+};
