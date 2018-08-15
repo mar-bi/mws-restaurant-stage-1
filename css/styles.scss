@@ -41,9 +41,7 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
-  color: $blue;
+a:hover {
   text-decoration: none;
 }
 
@@ -85,14 +83,24 @@ section {
   min-height: 100%;
 }
 
+/* =======================Footer============================== */
 .footer {
   background-color: #444;
-  color: #aaa;
+  color: #DBDBDB;
   font-size: 0.75em;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.footer-link {
+  color: #FFD68A;
+  &:hover,
+  &:focus {
+    color: #C4E0F8;
+    text-decoration: underline;
+  }
 }
 
 /* ======================= Navigation ======================== */
@@ -117,6 +125,11 @@ section {
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
+  &:hover,
+  &:focus {
+    color: #78BBE8;
+    text-decoration: underline;
+  }
 }
 
 .nav-breadcrumb {
@@ -182,13 +195,18 @@ section {
   box-shadow: 0 0 3px 6px lighten($blue, 10%);
 }
 
+.leaflet-marker-icon:hover {
+  box-shadow: 0 0 3px 6px lighten($blue, 10%);
+}
+
+
 /* =================== Restaurant Filtering ================== */
 .filter-options {
   box-sizing: border-box;
   width: 100%;
   min-height: 50px;
   padding: 0.75em 0.5em;
-  background-color: $blue;
+  background-color: #185D8C;
   align-items: center;
   @media screen and (min-width: 440px) {
     padding-bottom: 1em;
@@ -279,7 +297,7 @@ section {
 }
 
 .restaurant-title {
-  color: #f18200;
+  color: #C75000;
   font-family: Arial, sans-serif;
   font-size: 1.25em;
   font-weight: 200;
@@ -304,7 +322,7 @@ section {
   display: block;
   background-color: $orange;
   border-radius: 2px;
-  color: #fff;
+  color: #292B38;
   font-size: 1em;
   margin: 15px 0 0;
   padding: 10px 30px;
@@ -319,6 +337,10 @@ section {
   &:focus {
     outline: 2px dotted $blue;
     box-shadow: 0 0 3px 6px lighten($blue, 10%);
+  }
+  &:hover {
+    background-color: #185D8C;
+    color: #fff;
   }
 }
 

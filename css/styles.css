@@ -30,9 +30,7 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
-  color: #3397db;
+a:hover {
   text-decoration: none;
 }
 
@@ -74,14 +72,23 @@ section {
   min-height: 100%;
 }
 
+/* =======================Footer============================== */
 .footer {
   background-color: #444;
-  color: #aaa;
+  color: #DBDBDB;
   font-size: 0.75em;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.footer-link {
+  color: #FFD68A;
+}
+.footer-link:hover, .footer-link:focus {
+  color: #C4E0F8;
+  text-decoration: underline;
 }
 
 /* ======================= Navigation ======================== */
@@ -108,6 +115,10 @@ section {
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
+}
+.nav-header-link:hover, .nav-header-link:focus {
+  color: #78BBE8;
+  text-decoration: underline;
 }
 
 .nav-breadcrumb {
@@ -174,13 +185,17 @@ section {
   box-shadow: 0 0 3px 6px #5eade3;
 }
 
+.leaflet-marker-icon:hover {
+  box-shadow: 0 0 3px 6px #5eade3;
+}
+
 /* =================== Restaurant Filtering ================== */
 .filter-options {
   box-sizing: border-box;
   width: 100%;
   min-height: 50px;
   padding: 0.75em 0.5em;
-  background-color: #3397db;
+  background-color: #185D8C;
   align-items: center;
 }
 @media screen and (min-width: 440px) {
@@ -281,7 +296,7 @@ section {
 }
 
 .restaurant-title {
-  color: #f18200;
+  color: #C75000;
   font-family: Arial, sans-serif;
   font-size: 1.25em;
   font-weight: 200;
@@ -306,7 +321,7 @@ section {
   display: block;
   background-color: orange;
   border-radius: 2px;
-  color: #fff;
+  color: #292B38;
   font-size: 1em;
   margin: 15px 0 0;
   padding: 10px 30px;
@@ -322,6 +337,10 @@ section {
 .restaurant-link:focus {
   outline: 2px dotted #3397db;
   box-shadow: 0 0 3px 6px #5eade3;
+}
+.restaurant-link:hover {
+  background-color: #185D8C;
+  color: #fff;
 }
 
 /* =================== Restaurant Details ==================== */
