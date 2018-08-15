@@ -4,9 +4,9 @@
 // Variables
 //colors
 $text-color: #333;
-$orange: orange;
 $blue: #3397db;
-$body-bcg: #fdfdfd;
+$orange_title: #C75000;
+
 
 //sizes
 $max-width: 1024px;
@@ -23,7 +23,7 @@ p {
 }
 
 body {
-  background-color: $body-bcg;
+  background-color: #fdfdfd;
   position: relative;
   max-width: $max-width;
   margin: 0 auto;
@@ -36,11 +36,7 @@ li {
   color: $text-color;
 }
 
-a {
-  color: $orange;
-  text-decoration: none;
-}
-
+a,
 a:hover {
   text-decoration: none;
 }
@@ -77,6 +73,8 @@ nav,
 section {
   display: block;
 }
+
+/* ====================Main Content=========================== */
 
 .maincontent {
   background-color: #f3f3f3;
@@ -162,7 +160,7 @@ section {
 
 /* Add a color to all links inside the list */
 .breadcrumb-link {
-  color: #0275d8;
+  color: #024F92;
   text-decoration: none;
 }
 
@@ -198,7 +196,6 @@ section {
 .leaflet-marker-icon:hover {
   box-shadow: 0 0 3px 6px lighten($blue, 10%);
 }
-
 
 /* =================== Restaurant Filtering ================== */
 .filter-options {
@@ -297,7 +294,7 @@ section {
 }
 
 .restaurant-title {
-  color: #C75000;
+  color: $orange_title;
   font-family: Arial, sans-serif;
   font-size: 1.25em;
   font-weight: 200;
@@ -320,7 +317,7 @@ section {
 
 .restaurant-link {
   display: block;
-  background-color: $orange;
+  background-color: orange;
   border-radius: 2px;
   color: #292B38;
   font-size: 1em;
@@ -399,7 +396,7 @@ section {
 }
 
 .restaurant-name {
-  color: #f18200;
+  color: $orange_title;
   font-family: Arial, sans-serif;
   font-size: 1.625em;
   font-weight: 200;
@@ -467,7 +464,7 @@ section {
 }
 
 .reviews-title {
-  color: #f58500;
+  color: $orange_title;
   font-size: 2em;
   font-weight: 300;
   letter-spacing: -1px;
