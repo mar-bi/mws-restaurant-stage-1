@@ -36,6 +36,10 @@ a:focus {
   text-decoration: none;
 }
 
+a:focus {
+  outline: 2px dotted #3397db;
+}
+
 a img {
   border: none 0px #fff;
 }
@@ -106,6 +110,15 @@ section {
   text-transform: uppercase;
 }
 
+.nav-breadcrumb {
+  width: 100%;
+}
+@media screen and (min-width: 700px) {
+  .nav-breadcrumb {
+    width: 50%;
+  }
+}
+
 .breadcrumb {
   box-sizing: border-box;
   padding: 10px 40px 16px;
@@ -113,12 +126,6 @@ section {
   background-color: #eee;
   font-size: 1.1rem;
   margin: 0;
-  width: 100%;
-}
-@media screen and (min-width: 700px) {
-  .breadcrumb {
-    width: 50%;
-  }
 }
 
 /* Display list items side by side */
@@ -154,6 +161,17 @@ section {
   height: 400px;
   width: 100%;
   background-color: #ccc;
+}
+.map:focus {
+  outline: 2px dotted #3397db;
+  box-shadow: 0 0 3px 6px #5eade3;
+}
+
+.leaflet-marker-icon:focus,
+.leaflet-control-zoom-in:focus,
+.leaflet-control-zoom-out:focus {
+  outline: 2px dotted #3397db;
+  box-shadow: 0 0 3px 6px #5eade3;
 }
 
 /* =================== Restaurant Filtering ================== */
@@ -206,6 +224,10 @@ section {
   .filter-select {
     height: 35px;
   }
+}
+.filter-select:focus {
+  outline: 2px dotted #3397db;
+  box-shadow: 0 0 3px 8px rgba(255, 255, 255, 0.8);
 }
 
 .filter-select-option {
@@ -297,6 +319,10 @@ section {
 .restaurant-link:active {
   transform: translateY(3px);
 }
+.restaurant-link:focus {
+  outline: 2px dotted #3397db;
+  box-shadow: 0 0 3px 6px #5eade3;
+}
 
 /* =================== Restaurant Details ==================== */
 .inside .header {
@@ -327,6 +353,7 @@ section {
   background: blue none repeat scroll 0 0;
   width: 100%;
   height: 400px;
+  z-index: 1005;
 }
 @media screen and (min-width: 700px) {
   .inside .map-container {
