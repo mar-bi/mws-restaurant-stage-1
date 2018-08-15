@@ -201,7 +201,6 @@ createRestaurantHTML = restaurant => {
   more.setAttribute('aria-labelledby', id);
   li.append(more);
 
-  li.setAttribute('aria-labelledby', id);
   return li;
 };
 
