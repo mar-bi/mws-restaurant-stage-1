@@ -9,6 +9,7 @@ const allCaches = [staticCacheName, contentMapCache, contentImagesCache];
 
 const repoPrefix = '/mws-restaurant-stage-1/';
 const URLS = [
+  repoPrefix,
   `${repoPrefix}index.html`,
   `${repoPrefix}restaurant.html`,
   `${repoPrefix}js/main.js`,
@@ -65,8 +66,7 @@ self.addEventListener('fetch', event => {
   }
 
   //cache images
-  if (requestUrl.origin === location.origin &&
-		requestUrl.pathname.startsWith('/build_images/')) {
+  if (requestUrl.pathname.startsWith('/mws-restaurant-stage-1/build_images/')) {
     event.respondWith(serveImgAssets(contentImagesCache, event.request));
     return;
   }
