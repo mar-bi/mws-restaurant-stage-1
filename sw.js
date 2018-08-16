@@ -1,23 +1,21 @@
-// TODO: update for gh-pages hosting
-
 const appPrefix = 'rest-rev-app';
-const staticCacheVersion = 'v3';
-const mapsCacheVersion = 'v3';
-const imgCahcheVersion = 'v3';
+const staticCacheVersion = 'v1';
+const mapsCacheVersion = 'v1';
+const imgCahcheVersion = 'v1';
 const staticCacheName = `${appPrefix}-static-${staticCacheVersion}`;
 const contentMapCache = `${appPrefix}-maps-${mapsCacheVersion}`;
 const contentImagesCache = `${appPrefix}-imgs-${imgCahcheVersion}`;
 const allCaches = [staticCacheName, contentMapCache, contentImagesCache];
 
-//const repoPrefix = '/mws-restaurant-stage-1/';
+const repoPrefix = '/mws-restaurant-stage-1/';
 const URLS = [
-  'index.html',
-  'restaurant.html',
-  'js/main.js',
-  'js/dbhelper.js',
-  'js/restaurant_info.js',
-  'css/styles.css',
-  'data/restaurants.json',
+  `${repoPrefix}index.html`,
+  `${repoPrefix}restaurant.html`,
+  `${repoPrefix}js/main.js`,
+  `${repoPrefix}js/dbhelper.js`,
+  `${repoPrefix}js/restaurant_info.js`,
+  `${repoPrefix}css/build/styles.css`,
+  `${repoPrefix}data/restaurants.json`,
   'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js'
 ];
@@ -68,7 +66,7 @@ self.addEventListener('fetch', event => {
 
   //cache images
   if (requestUrl.origin === location.origin &&
-		requestUrl.pathname.startsWith('/build/images/')) {
+		requestUrl.pathname.startsWith('/build_images/')) {
     event.respondWith(serveImgAssets(contentImagesCache, event.request));
     return;
   }

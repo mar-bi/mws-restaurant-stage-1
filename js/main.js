@@ -223,13 +223,11 @@ const addMarkersToMap = (restaurants = self.restaurants) => {
 /**
  * Register Service Worker
  */
-// TODO: change SW location to /mws-restaurant-stage-1/sw.js and
-// scope to /mws-restaurant-stage-1/ for github hosting
 const registerServiceWorker = () => {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-      .register('/sw.js', {
-        scope: '/'
+      .register('/mws-restaurant-stage-1/sw.js', {
+        scope: '/mws-restaurant-stage-1/'
       })
       .then(registration => {
         console.log(
