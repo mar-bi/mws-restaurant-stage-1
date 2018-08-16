@@ -2,22 +2,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    /* Configuration for concatinating files */
-    concat: {
-      dist: {
-        src: ['js/*.js'],
-        dest: 'build/js/production.js'
-      }
-    },
-
-    /* Minification of the production.js file */
-    uglify: {
-      build: {
-        src: 'build/js/production.js',
-        dest: 'build/js/production.min.js'
-      }
-    },
-
     /* Preprocessing of Sass files */
     sass: {
       dist: {
@@ -25,7 +9,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'build/css/styles.css': 'css/styles.scss'
+          'css/build/styles.css': 'css/styles.scss'
         }
       }
     },
@@ -63,7 +47,7 @@ module.exports = function(grunt) {
             expand: true,
             src: ['*.jpg'],
             cwd: 'img/',
-            dest: 'build/images/'
+            dest: 'build_images/'
           }
         ]
       }
@@ -72,7 +56,7 @@ module.exports = function(grunt) {
     /* Clear out the images directory if it exists */
     clean: {
       dev: {
-        src: ['build/images']
+        src: ['build_images']
       }
     },
 
@@ -80,18 +64,15 @@ module.exports = function(grunt) {
     mkdir: {
       dev: {
         options: {
-          create: ['build/images']
+          create: ['build_images']
         }
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-mkdir');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'clean', 'mkdir', 'responsive_images']);
+  grunt.registerTask('default', ['sass', 'clean', 'mkdir', 'responsive_images']);
 };
