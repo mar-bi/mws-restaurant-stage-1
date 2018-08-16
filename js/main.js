@@ -7,7 +7,8 @@ var markers = [];
  */
 document.addEventListener('DOMContentLoaded', () => {
   registerServiceWorker();
-  initMap(); // added
+  initMap();
+  initRestaurantFilter();
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -123,6 +124,17 @@ const updateRestaurants = () => {
       }
     }
   );
+};
+
+/**
+ * Add event listeners for filter selects
+*/
+const initRestaurantFilter = () => {
+  const neighborhoodFilter = document.getElementById('neighborhoods-select');
+  const cuisinesFilter = document.getElementById('cuisines-select');
+
+  neighborhoodFilter.addEventListener('onchange', updateRestaurants);
+  cuisinesFilter.addEventListener('onchange', updateRestaurants);
 };
 
 /**
