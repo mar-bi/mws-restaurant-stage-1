@@ -1,3 +1,4 @@
+const sitePrefix = 'https://mar-bi.github.io/mws-restaurant-stage-1/';
 /**
  * Common database helper functions.
  */
@@ -6,7 +7,6 @@ class DBHelper {
    * Database URL.
    */
   static get DATABASE_URL() {
-    const sitePrefix = 'https://mar-bi.github.io/mws-restaurant-stage-1/';
     return `${sitePrefix}data/restaurants.json`;
   }
 
@@ -165,7 +165,7 @@ class DBHelper {
    */
   static imageUrlForRestaurant(restaurant) {
     const filename = restaurant.photograph.replace('.', '-270.');
-    return `/build_images/${filename}`;
+    return `${sitePrefix}build_images/${filename}`;
   }
 
   /**
@@ -180,7 +180,7 @@ class DBHelper {
    * Restaurant image srcset with x descriptors.
    */
   static imageSrcsetXForRestaurant(restaurant) {
-    const path = `/build_images/${DBHelper.imageFilenameForRestaurant(
+    const path = `${sitePrefix}build_images/${DBHelper.imageFilenameForRestaurant(
       restaurant
     )}`;
     return `${path}-270.jpg 1x, ${path}-540.jpg 2x`;
@@ -190,7 +190,7 @@ class DBHelper {
    * Restaurant image srcset with w descriptors.
    */
   static imageSrcsetWForRestaurant(restaurant) {
-    const path = `/build_images/${DBHelper.imageFilenameForRestaurant(
+    const path = `${sitePrefix}build_images/${DBHelper.imageFilenameForRestaurant(
       restaurant
     )}`;
     return `${path}-270.jpg 270w, ${path}-400.jpg 400w, ${path}-540.jpg 540w, ${path}-800.jpg 800w`;
