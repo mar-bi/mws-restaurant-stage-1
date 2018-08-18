@@ -15,13 +15,15 @@ Project features implemented at the **stage-1**:
  - Eslint,
  - Prettier <sup>2</sup>.
 
-Link to [Restaurant Reviews App](https://mar-bi.github.io/mws-restaurant-stage-1/).
+Link to [Restaurant Reviews App][2].
 
 ---
 
-<sup>1</sup> There is an extra plain and formatted [CSS file][2].
+<sup>1</sup> There is an extra plain and formatted [CSS file][3].
 
-<sup>2</sup> [Prettier VSCode plugin](https://github.com/prettier/prettier-vscode)
+<sup>2</sup> [Prettier VSCode plugin][4]
 
-[1]:https://mar-bi.github.io/mws-restaurant-stage-1/TASK_OVERVIEW.md
-[2]:https://mar-bi.github.io/mws-restaurant-stage-1/css/styles.css
+[1]:TASK_OVERVIEW.md
+[2]:https://mar-bi.github.io/mws-restaurant-stage-1/
+[3]:css/styles.css
+[4]:https://github.com/prettier/prettier-vscode
