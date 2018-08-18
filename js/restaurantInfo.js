@@ -105,19 +105,21 @@ const fillRestaurantHoursHTML = (
 ) => {
   const hours = document.getElementById('restaurant-hours');
   for (let key in operatingHours) {
-    const row = document.createElement('tr');
+    if (operatingHours.hasOwnProperty(key)) {
+      const row = document.createElement('tr');
 
-    const day = document.createElement('td');
-    day.innerHTML = key;
-    day.className = 'restaurant-hours-cell';
-    row.appendChild(day);
+      const day = document.createElement('td');
+      day.innerHTML = key;
+      day.className = 'restaurant-hours-cell';
+      row.appendChild(day);
 
-    const time = document.createElement('td');
-    time.innerHTML = operatingHours[key];
-    time.className = 'restaurant-hours-cell';
-    row.appendChild(time);
+      const time = document.createElement('td');
+      time.innerHTML = operatingHours[key];
+      time.className = 'restaurant-hours-cell';
+      row.appendChild(time);
 
-    hours.appendChild(row);
+      hours.appendChild(row);
+    }
   }
 };
 
