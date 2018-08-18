@@ -1,22 +1,22 @@
-const appPrefix = 'rest-rev-app';
+const APP_PREFIX = 'rest-rev-app';
 const staticCacheVersion = 'v1';
 const mapsCacheVersion = 'v1';
 const imgCahcheVersion = 'v1';
-const staticCacheName = `${appPrefix}-static-${staticCacheVersion}`;
-const contentMapCache = `${appPrefix}-maps-${mapsCacheVersion}`;
-const contentImagesCache = `${appPrefix}-imgs-${imgCahcheVersion}`;
+const staticCacheName = `${APP_PREFIX}-static-${staticCacheVersion}`;
+const contentMapCache = `${APP_PREFIX}-maps-${mapsCacheVersion}`;
+const contentImagesCache = `${APP_PREFIX}-imgs-${imgCahcheVersion}`;
 const allCaches = [staticCacheName, contentMapCache, contentImagesCache];
 
-const repoPrefix = '/mws-restaurant-stage-1/';
+const REPO_PREFIX = '/mws-restaurant-stage-1/';
 const URLS = [
-  repoPrefix,
-  `${repoPrefix}index.html`,
-  `${repoPrefix}restaurant.html`,
-  `${repoPrefix}js/main.js`,
-  `${repoPrefix}js/dbhelper.js`,
-  `${repoPrefix}js/restaurant_info.js`,
-  `${repoPrefix}css/build/styles.css`,
-  `${repoPrefix}data/restaurants.json`,
+  REPO_PREFIX,
+  `${REPO_PREFIX}index.html`,
+  `${REPO_PREFIX}restaurant.html`,
+  `${REPO_PREFIX}js/main.js`,
+  `${REPO_PREFIX}js/dbHelper.js`,
+  `${REPO_PREFIX}js/restaurantInfo.js`,
+  `${REPO_PREFIX}css/build/styles.css`,
+  `${REPO_PREFIX}data/restaurants.json`,
   'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js'
 ];
@@ -42,7 +42,7 @@ self.addEventListener('activate', event => {
         cacheNames
           .filter(cacheName => {
             return (
-              cacheName.startsWith(appPrefix) &&
+              cacheName.startsWith(APP_PREFIX) &&
               !allCaches.includes(cacheName)
             );
           })
@@ -83,7 +83,6 @@ function serveImgAssets(cacheName, eventRequest){
   return caches.open(cacheName).then(function(cache) {
     return cache.match(eventRequest).then(function(response) {
       return response || fetch(eventRequest).then(function(response) {
-        console.log('putting to cache', cacheName);
         cache.put(eventRequest, response.clone());
         return response;
       });
