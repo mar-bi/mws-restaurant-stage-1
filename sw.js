@@ -1,7 +1,7 @@
 const APP_PREFIX = 'rest-rev-app';
-const staticCacheVersion = 'v1';
-const mapsCacheVersion = 'v1';
-const imgCahcheVersion = 'v1';
+const staticCacheVersion = 'v2';
+const mapsCacheVersion = 'v2';
+const imgCahcheVersion = 'v2';
 const staticCacheName = `${APP_PREFIX}-static-${staticCacheVersion}`;
 const contentMapCache = `${APP_PREFIX}-maps-${mapsCacheVersion}`;
 const contentImagesCache = `${APP_PREFIX}-imgs-${imgCahcheVersion}`;
@@ -53,7 +53,7 @@ self.addEventListener('activate', event => {
 });
 
 /**
- * Cache maps and images
+ * Cache maps and images, redirect to a restaurant page
  */
 self.addEventListener('fetch', event => {
   const requestUrl = new URL(event.request.url);
@@ -68,6 +68,12 @@ self.addEventListener('fetch', event => {
   //cache images
   if (requestUrl.pathname.startsWith('/mws-restaurant-stage-1/build_images/')) {
     event.respondWith(serveImgAssets(contentImagesCache, event.request));
+    return;
+  }
+
+  //serve a restaurant page
+  if(requestUrl.pathname === '/mws-restaurant-stage-1/restaurant.html') {
+    event.respondWith(caches.match('restaurant.html'));
     return;
   }
 
